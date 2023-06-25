@@ -1,0 +1,14 @@
+body {
+
+}
+
+.buttons {
+    display: grid;
+    grid-template:
+        "clear backspace power divide"
+        "number-1 number-2 number-3 plus"
+        "number-4 number-5 number-6 minus"
+        "number-7 number-8 number-9 multiply"
+        "number-0 decimal equals multiply"
+}
+
