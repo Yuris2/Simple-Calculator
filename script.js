@@ -1,3 +1,9 @@
+const numbers = document.querySelectorAll('.number')
+const operators = document.querySelectorAll('.operation')
+const backspace = document.querySelectorAll('.delete')
+const clear = document.querySelectorAll('.clear')
+const dipslay = document.getElementById("display")
+
 //Mathmatical Functions
 const add = (x , y) => x + y
 
