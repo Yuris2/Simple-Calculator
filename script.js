@@ -45,3 +45,8 @@ operators.forEach(operator => {
         firstNumber -= 1
     })
 })
+
+backspace.addEventListener('click', removeLastNumber => {
+    firstNumber = Math.floor(firstNumber / 10) //removes last digit of firstNumber to simulate backspace
+    display.innerHTML = firstNumber
+})
