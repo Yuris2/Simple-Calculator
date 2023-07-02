@@ -27,15 +27,15 @@ const operate = (num1, operator, num2) => {
 //
 
 //Instance Variables
-let firstNumber = 0;
+let firstNumber = "";
 let operator;
 let secondNumber;
 
 
 numbers.forEach(button => {
     button.addEventListener('click', addNumber => {
+        firstNumber += button.innerHTML
         display.innerHTML = firstNumber;
-        firstNumber += 1
     })
 })
 
