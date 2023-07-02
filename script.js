@@ -33,8 +33,15 @@ let secondNumber;
 
 
 numbers.forEach(button => {
-    button.addEventListener('click', addOperation => {
+    button.addEventListener('click', addNumber => {
         display.innerHTML = firstNumber;
         firstNumber += 1
+    })
+})
+
+operators.forEach(operator => {
+    operator.addEventListener('click', addOperator => {
+        display.innerHTML = firstNumber
+        firstNumber -= 1
     })
 })
