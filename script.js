@@ -3,6 +3,7 @@ const operators = document.querySelectorAll('.operation')
 const backspace = document.querySelector('#backspace')
 const clear = document.querySelector('#clear')
 const display = document.getElementById("input")
+const equalButton = document.querySelector('#equals')
 
 //Mathmatical Functions
 const add = (x , y) => x + y
@@ -35,11 +36,11 @@ let secondNumber = "";
 
 numbers.forEach(button => {
     button.addEventListener('click', addNumber => {
-        if (operatorHit == false) {
+        if (operatorHit == false) { //first part of equation
             firstNumber += button.innerHTML
             display.innerHTML = firstNumber;
             console.log("first number")
-        } else if (operatorHit == true) {
+        } else if (operatorHit == true) { //second part of equation
             secondNumber += button.innerHTML
             console.log("second number")
         }
@@ -68,4 +69,10 @@ clear.addEventListener('click', () => {
     operatorHit = false
     secondNumber = "";
     display.innerHTML = 0
+})
+
+equalButton.addEventListener('click', () => {
+    if (firstNumber != "" && secondNumber != "") { //Ensures that the equation is complete
+        console.log("Solving...")
+    }
 })
