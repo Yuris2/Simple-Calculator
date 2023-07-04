@@ -72,7 +72,11 @@ clear.addEventListener('click', () => {
 })
 
 equalButton.addEventListener('click', () => {
+    firstNumber = Number(firstNumber)
+    secondNumber = Number(secondNumber)
+    
     if (firstNumber != "" && secondNumber != "") { //Ensures that the equation is complete
-        console.log("Solving...")
+       let answer = operate(firstNumber, eqoperator, secondNumber)
+       console.log(answer)
     }
 })
