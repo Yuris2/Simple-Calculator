@@ -39,10 +39,11 @@ numbers.forEach(button => {
         if (operatorHit == false) { //first part of equation
             firstNumber += button.innerHTML
             display.innerHTML = firstNumber;
-            console.log("first number")
+            console.log(firstNumber)
         } else if (operatorHit == true) { //second part of equation
+            display.innerHTML += button.innerHTML
             secondNumber += button.innerHTML
-            console.log("second number")
+            console.log(secondNumber)
         }
         
     })
@@ -72,11 +73,16 @@ clear.addEventListener('click', () => {
 })
 
 equalButton.addEventListener('click', () => {
-    firstNumber = Number(firstNumber)
-    secondNumber = Number(secondNumber)
-    
     if (firstNumber != "" && secondNumber != "") { //Ensures that the equation is complete
+
+        firstNumber = Number(firstNumber) //Casting
+        secondNumber = Number(secondNumber)
+    
        let answer = operate(firstNumber, eqoperator, secondNumber)
-       console.log(answer)
+       display.innerHTML = answer
+
+       firstNumber = answer
+       operatorHit = false
+       eqoperator = null
     }
 })
