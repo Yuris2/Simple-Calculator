@@ -1,7 +1,7 @@
 const numbers = document.querySelectorAll('.number')
 const operators = document.querySelectorAll('.operation')
 const backspace = document.querySelector('#backspace')
-const clear = document.querySelectorAll('.clear')
+const clear = document.querySelector('#clear')
 const display = document.getElementById("input")
 
 //Mathmatical Functions
@@ -28,7 +28,7 @@ const operate = (num1, operator, num2) => {
 
 //Instance Variables
 let firstNumber = "";
-let operator;
+let eqoperator;
 let operatorHit = false
 let secondNumber = "";
 
@@ -49,6 +49,8 @@ numbers.forEach(button => {
 
 operators.forEach(operator => {
     operator.addEventListener('click', addOperator => {
+        eqoperator = operator.innerHTML
+        console.log(eqoperator)
         display.innerHTML += operator.innerHTML
         operatorHit = true
     })
@@ -58,4 +60,12 @@ backspace.addEventListener('click', removeLastNumber => {
     firstNumber = Math.floor(firstNumber / 10) //removes last digit of firstNumber to simulate backspace
     console.log(firstNumber)
     display.innerHTML = firstNumber
+})
+
+clear.addEventListener('click', () => {
+    firstNumber = ""
+    eqoperator = null
+    operatorHit = false
+    secondNumber = "";
+    display.innerHTML = 0
 })
