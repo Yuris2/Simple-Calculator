@@ -29,19 +29,28 @@ const operate = (num1, operator, num2) => {
 //Instance Variables
 let firstNumber = "";
 let operator;
-let secondNumber;
+let operatorHit = false
+let secondNumber = "";
 
 
 numbers.forEach(button => {
     button.addEventListener('click', addNumber => {
-        firstNumber += button.innerHTML
-        display.innerHTML = firstNumber;
+        if (operatorHit == false) {
+            firstNumber += button.innerHTML
+            display.innerHTML = firstNumber;
+            console.log("first number")
+        } else if (operatorHit == true) {
+            secondNumber += button.innerHTML
+            console.log("second number")
+        }
+        
     })
 })
 
 operators.forEach(operator => {
     operator.addEventListener('click', addOperator => {
         display.innerHTML += operator.innerHTML
+        operatorHit = true
     })
 })
 
