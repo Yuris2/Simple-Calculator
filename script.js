@@ -43,6 +43,7 @@ numbers.forEach(button => {
     button.addEventListener('click', () => {
         if (operatorHit == false) { //first part of equation
             firstNumber += button.innerHTML
+            console.log(display.innerHTML.includes("."))
             display.innerHTML = firstNumber;
             console.log(firstNumber)
         } else if (operatorHit == true) { //second part of equation
@@ -50,7 +51,6 @@ numbers.forEach(button => {
             secondNumber += button.innerHTML
             console.log(secondNumber)
         }
-        
     })
 })
 
@@ -64,7 +64,7 @@ operators.forEach(operator => {
 })
 
 backspace.addEventListener('click', () => {
-    firstNumber = Math.floor(firstNumber / 10) //removes last digit of firstNumber to simulate backspace
+    firstNumber = firstNumber.substring(0, firstNumber.length - 1)//removes last digit of firstNumber to simulate backspace
     console.log(firstNumber)
     display.innerHTML = firstNumber
 })
