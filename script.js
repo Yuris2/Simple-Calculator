@@ -22,7 +22,12 @@ const operate = (num1, operator, num2) => {
     }else if (operator == "*") {
         return multiply(num1, num2)
     }else if (operator == "/") {
+        if (num2 == 0) {
+            return "Can't Divide by 0"
+        }
         return divide(num1, num2) 
+    }else if (operator == "^") {
+        return Math.pow(num1, num2)
     }
 }
 //
