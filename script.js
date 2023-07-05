@@ -38,15 +38,17 @@ let firstNumber = "";
 let eqoperator;
 let operatorHit = false
 let secondNumber = "";
+let clearScreen = false
 
 
 numbers.forEach(button => {
     button.addEventListener('click', () => {
         if (operatorHit == false) { //first part of equation
-            firstNumber += button.innerHTML
+            firstNumber += button.innerHTML //add variable that is clicked to the end of number
             display.innerHTML = firstNumber;
             console.log(firstNumber)
         } else if (operatorHit == true) { //second part of equation
+            if (clearScreen == false) display.innerHTML = ""; clearScreen = true //one line if statement to make display clear only once
             display.innerHTML += button.innerHTML
             secondNumber += button.innerHTML
             console.log(secondNumber)
@@ -58,17 +60,16 @@ operators.forEach(operator => {
     operator.addEventListener('click', () => {
         eqoperator = operator.innerHTML
         console.log(eqoperator)
-        display.innerHTML += operator.innerHTML
         operatorHit = true
     })
 })
 decimalPoints.addEventListener('click' , () => {
-    if (operatorHit == false) {
+    if (operatorHit == false) { //first number
         if (!firstNumber.includes(".")) { //makes sure that a decimal point has not been added
             firstNumber += "."
             display.innerHTML = firstNumber //updates display
         }
-    } else if (operatorHit == false) {
+    } else if (operatorHit == true) { //second number     
         if (!secondNumber.includes(".")) {
             secondNumber += "."
             display.innerHTML = secondNumber
@@ -83,6 +84,7 @@ backspace.addEventListener('click', () => {
 })
 
 clear.addEventListener('click', () => {
+    //resets all values to default values
     firstNumber = ""
     eqoperator = null
     operatorHit = false
@@ -98,10 +100,11 @@ equalButton.addEventListener('click', () => {
     
        let answer = operate(firstNumber, eqoperator, secondNumber)
        display.innerHTML = answer
-
+       //keeps firstNumber the same to allow for multiple operations but every other value is reset
        firstNumber = answer
        secondNumber = ""
        operatorHit = false
        eqoperator = null
+       clearScreen = false
     }
 })
