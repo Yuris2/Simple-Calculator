@@ -1,4 +1,5 @@
 const numbers = document.querySelectorAll('.number')
+const decimalPoints = document.querySelector('#decimal')
 const operators = document.querySelectorAll('.operation')
 const backspace = document.querySelector('#backspace')
 const clear = document.querySelector('#clear')
@@ -43,7 +44,6 @@ numbers.forEach(button => {
     button.addEventListener('click', () => {
         if (operatorHit == false) { //first part of equation
             firstNumber += button.innerHTML
-            console.log(display.innerHTML.includes("."))
             display.innerHTML = firstNumber;
             console.log(firstNumber)
         } else if (operatorHit == true) { //second part of equation
@@ -61,6 +61,19 @@ operators.forEach(operator => {
         display.innerHTML += operator.innerHTML
         operatorHit = true
     })
+})
+decimalPoints.addEventListener('click' , () => {
+    if (operatorHit == false) {
+        if (!firstNumber.includes(".")) { //makes sure that a decimal point has not been added
+            firstNumber += "."
+            display.innerHTML = firstNumber //updates display
+        }
+    } else if (operatorHit == false) {
+        if (!secondNumber.includes(".")) {
+            secondNumber += "."
+            display.innerHTML = secondNumber
+        }
+    }
 })
 
 backspace.addEventListener('click', () => {
