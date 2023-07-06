@@ -41,7 +41,7 @@ let secondNumber = "";
 let clearScreen = false
 let numOfTimesOperated = 0;
 let chainOperation = [0, false] //number of times operated, was equals hit
-
+//Functions
 const resetCalc = () => {
     //resets all values to default values
     firstNumber = ""
@@ -58,15 +58,14 @@ const solve = () => {
         secondNumber = Number(secondNumber)
     
        let answer = operate(firstNumber, eqoperator, secondNumber)
+       resetCalc()
+       //keeps firstNumber and display the same to allow for multiple operations but every other value is reset
        display.innerHTML = answer
-       //keeps firstNumber the same to allow for multiple operations but every other value is reset
        firstNumber = answer
-       secondNumber = ""
-       operatorHit = false
-       eqoperator = null
        clearScreen = false
     }
 }
+//Event Listeners
 numbers.forEach(button => {
     button.addEventListener('click', () => {
         if (operatorHit == false) { //first part of equation
@@ -109,9 +108,7 @@ backspace.addEventListener('click', () => {
     display.innerHTML = firstNumber
 })
 
-clear.addEventListener('click', () => {
-
-})
+clear.addEventListener('click', resetCalc)
 
 equalButton.addEventListener('click', () => {
     solve()
