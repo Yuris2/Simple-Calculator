@@ -39,8 +39,34 @@ let eqoperator;
 let operatorHit = false
 let secondNumber = "";
 let clearScreen = false
+let numOfTimesOperated = 0;
+let chainOperation = [0, false] //number of times operated, was equals hit
 
+const resetCalc = () => {
+    //resets all values to default values
+    firstNumber = ""
+    eqoperator = null
+    operatorHit = false
+    secondNumber = "";
+    display.innerHTML = 0
+    chainOperation[1] = false
+}
+const solve = () => {
+    if (firstNumber != "" && secondNumber != "") { //Ensures that the equation is complete
 
+        firstNumber = Number(firstNumber) //Casting
+        secondNumber = Number(secondNumber)
+    
+       let answer = operate(firstNumber, eqoperator, secondNumber)
+       display.innerHTML = answer
+       //keeps firstNumber the same to allow for multiple operations but every other value is reset
+       firstNumber = answer
+       secondNumber = ""
+       operatorHit = false
+       eqoperator = null
+       clearScreen = false
+    }
+}
 numbers.forEach(button => {
     button.addEventListener('click', () => {
         if (operatorHit == false) { //first part of equation
@@ -84,27 +110,10 @@ backspace.addEventListener('click', () => {
 })
 
 clear.addEventListener('click', () => {
-    //resets all values to default values
-    firstNumber = ""
-    eqoperator = null
-    operatorHit = false
-    secondNumber = "";
-    display.innerHTML = 0
+
 })
 
 equalButton.addEventListener('click', () => {
-    if (firstNumber != "" && secondNumber != "") { //Ensures that the equation is complete
-
-        firstNumber = Number(firstNumber) //Casting
-        secondNumber = Number(secondNumber)
-    
-       let answer = operate(firstNumber, eqoperator, secondNumber)
-       display.innerHTML = answer
-       //keeps firstNumber the same to allow for multiple operations but every other value is reset
-       firstNumber = answer
-       secondNumber = ""
-       operatorHit = false
-       eqoperator = null
-       clearScreen = false
-    }
+    solve()
+    chainOperation[1] = true //sets is equal to true to end chain operation
 })
