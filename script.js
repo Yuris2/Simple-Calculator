@@ -49,7 +49,6 @@ const resetCalc = () => {
     operatorHit = false
     secondNumber = "";
     display.innerHTML = 0
-    chainOperation[1] = false
 }
 const solve = () => {
     if (firstNumber != "" && secondNumber != "") { //Ensures that the equation is complete
@@ -59,10 +58,15 @@ const solve = () => {
     
        let answer = operate(firstNumber, eqoperator, secondNumber)
        resetCalc()
-       //keeps firstNumber and display the same to allow for multiple operations but every other value is reset
        display.innerHTML = answer
-       firstNumber = answer
-       clearScreen = false
+       
+       if (chainOperation[1]== false) { //keeps firstNumber and display the same to allow for multiple operations but every other value is reset
+        firstNumber = answer 
+        clearScreen = false
+       }
+//ERROR WITH THE ADDING TO SCREEN
+//AFTER RESOLVED NEED TO WORK ON CHAIN OPERATION
+
     }
 }
 //Event Listeners
@@ -111,6 +115,6 @@ backspace.addEventListener('click', () => {
 clear.addEventListener('click', resetCalc)
 
 equalButton.addEventListener('click', () => {
-    solve()
     chainOperation[1] = true //sets is equal to true to end chain operation
+    solve()
 })
