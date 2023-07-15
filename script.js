@@ -5,6 +5,7 @@ const backspace = document.querySelector('#backspace')
 const clear = document.querySelector('#clear')
 const display = document.getElementById("input")
 const equalButton = document.querySelector('#equals')
+const negativeBtn = document.querySelector('#negative')
 
 //Mathmatical Functions
 const add = (x , y) => x + y
@@ -31,7 +32,6 @@ const operate = (num1, operator, num2) => {
         return Math.pow(num1, num2)
     }
 }
-//
 
 //Instance Variables
 let firstNumber = "";
@@ -99,6 +99,7 @@ operators.forEach(operator => {
         
     })
 })
+
 decimalPoints.addEventListener('click' , () => {
     if (operatorHit == false) { //first number
         if (!firstNumber.includes(".")) { //makes sure that a decimal point has not been added
@@ -113,6 +114,29 @@ decimalPoints.addEventListener('click' , () => {
     }
 })
 
+negativeBtn.addEventListener('click', () => {
+    if (operatorHit == false) { //first Number
+        if (!firstNumber.includes('-')) { //make sure number does not have negative sign
+            firstNumber = "-"+firstNumber
+            console.log(firstNumber)
+            display.innerHTML = firstNumber
+        } else if (firstNumber.includes('-')) {
+            firstNumber = firstNumber.substring(1)
+            display.innerHTML = firstNumber
+            console.log(firstNumber)
+        }
+    } else if (operatorHit == true) {
+        if (!secondNumber.includes('-')) { //make sure number does not have negative sign
+            firstNumber = "-"+secondNumber
+            console.log(secondNumber)
+            display.innerHTML = secondNumber
+        } else if (secondNumber.includes('-')) {
+            secondNumber = secondNumber.substring(1)
+            display.innerHTML = secondNumber
+            console.log(secondNumber)
+        }
+    }
+})
 backspace.addEventListener('click', () => {
     if (operatorHit == false) { //first Number
         if (firstNumber.length > 1) { //if First Number is not single digit
