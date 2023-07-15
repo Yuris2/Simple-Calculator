@@ -61,6 +61,7 @@ const solve = () => {
        
        if (chainOperation[1]== false) { //keeps firstNumber and display the same to allow for multiple operations but every other value is reset
         firstNumber = answer 
+        secondNumber = ""
         clearScreen = false
         console.log("Ok")
        }else if (chainOperation[1] == true) { //if equals sign was hit (signifying end of chain operation)
