@@ -39,7 +39,6 @@ let eqoperator;
 let operatorHit = false
 let secondNumber = "";
 let clearScreen = false
-let numOfTimesOperated = 0;
 let chainOperation = [0, false] //number of times operated, was equals hit
 //Functions
 const resetCalc = () => {
@@ -63,12 +62,12 @@ const solve = () => {
        if (chainOperation[1]== false) { //keeps firstNumber and display the same to allow for multiple operations but every other value is reset
         firstNumber = answer 
         clearScreen = false
-       }else if (chainOperation[1] == true) {
+        console.log("Ok")
+       }else if (chainOperation[1] == true) { //if equals sign was hit (signifying end of chain operation)
         resetCalc()
        }
-//ERROR WITH THE ADDING TO SCREEN
+       return answer
 //AFTER RESOLVED NEED TO WORK ON CHAIN OPERATION
-
     }
 }
 //Event Listeners
@@ -89,8 +88,14 @@ numbers.forEach(button => {
 
 operators.forEach(operator => {
     operator.addEventListener('click', () => {
-        eqoperator = operator.innerHTML
         operatorHit = true
+        chainOperation[0] += 1
+
+        if (chainOperation[0] > 1) { //if equals sign has not been hit
+            solve()
+        }
+        eqoperator = operator.innerHTML
+        
     })
 })
 decimalPoints.addEventListener('click' , () => {
@@ -108,9 +113,17 @@ decimalPoints.addEventListener('click' , () => {
 })
 
 backspace.addEventListener('click', () => {
-    firstNumber = firstNumber.substring(0, firstNumber.length - 1)//removes last digit of firstNumber to simulate backspace
-    console.log(firstNumber)
-    display.innerHTML = firstNumber
+    if (operatorHit == false) { //first Number
+        if (firstNumber.length > 1) { //if First Number is not single digit
+            firstNumber = firstNumber.substring(0, firstNumber.length - 1)//removes last digit of firstNumber to simulate backspace
+            display.innerHTML = firstNumber
+            console.log("Multiple digits")
+        } else {
+            display.innerHTML = 0
+            console.log("Single Digits")
+        }
+    }
+    
 })
 
 clear.addEventListener('click', () => {
