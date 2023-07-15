@@ -68,7 +68,6 @@ const solve = () => {
         resetCalc()
        }
        return answer
-//AFTER RESOLVED NEED TO WORK ON CHAIN OPERATION
     }
 }
 //Event Listeners
@@ -80,8 +79,8 @@ numbers.forEach(button => {
             console.log(firstNumber)
         } else if (operatorHit == true) { //second part of equation
             if (clearScreen == false) display.innerHTML = ""; clearScreen = true //one line if statement to make display clear only once
-            display.innerHTML += button.innerHTML
             secondNumber += button.innerHTML
+            display.innerHTML = secondNumber
             console.log(secondNumber)
         }
     })
@@ -127,8 +126,7 @@ negativeBtn.addEventListener('click', () => {
         }
     } else if (operatorHit == true) {
         if (!secondNumber.includes('-')) { //make sure number does not have negative sign
-            firstNumber = "-"+secondNumber
-            console.log(secondNumber)
+            secondNumber = "-"+secondNumber
             display.innerHTML = secondNumber
         } else if (secondNumber.includes('-')) {
             secondNumber = secondNumber.substring(1)
