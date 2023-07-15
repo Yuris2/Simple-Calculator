@@ -9,7 +9,7 @@ The Simple Calculator is a Web-Based Calculator that utilizes HTML5, CSS3,and Ja
 
 ## Live Preview
 
-To use the Calculator [visit this website](https://pip.pypa.io/en/stable/)
+To use the Calculator [visit this website](https://yuris2.github.io/Simple-Calculator/)
 
 
 ## Features
