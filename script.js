@@ -117,10 +117,15 @@ backspace.addEventListener('click', () => {
         if (firstNumber.length > 1) { //if First Number is not single digit
             firstNumber = firstNumber.substring(0, firstNumber.length - 1)//removes last digit of firstNumber to simulate backspace
             display.innerHTML = firstNumber
-            console.log("Multiple digits")
         } else {
             display.innerHTML = 0
-            console.log("Single Digits")
+        }
+    } else if (operatorHit == true) { //second Number
+        if (secondNumber.length > 1) { //if second Number is not single digit
+            secondNumber = secondNumber.substring(0, secondNumber.length - 1)//removes last digit of second to simulate backspace
+            display.innerHTML = secondNumber
+        } else {
+            display.innerHTML = 0
         }
     }
     
