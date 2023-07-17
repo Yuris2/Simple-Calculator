@@ -35,7 +35,7 @@ main {
 .screen {
     background-color: #505C68;
     padding-top: 10%;
-    padding-bottom:1%;
+    padding-bottom:2%;
 }
 
 #input {
@@ -50,10 +50,17 @@ button {
     font-family:lato;
     color:#FBFFFF;
     font-size: 19px;
-	border: 1px solid #2d63c8;
-	padding: 0.5rem 2rem;
+	border: 1px solid ;
+	padding: 1.5rem 3rem;
 	cursor: pointer
-	
+}
+
+.clear:hover, .delete:hover  {
+    color:#fe4a49
+}
+.clear:active, .delete:active {
+    background-color: #fe4a49;
+    color:#FBFFFF
 }
 
 .buttons-container {
