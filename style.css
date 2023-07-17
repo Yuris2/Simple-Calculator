@@ -29,12 +29,12 @@ body {
 }
 main {
     border: 2px solid #fe4a49;
-
+    max-width: min-content;
 }
 
 .screen {
     background-color: #505C68;
-    padding-top: 5%;
+    padding-top: 10%;
     padding-bottom:1%;
 }
 
@@ -49,6 +49,11 @@ button {
     background-color: #5B6A7D;
     font-family:lato;
     color:#FBFFFF;
+    font-size: 19px;
+	border: 1px solid #2d63c8;
+	padding: 0.5rem 2rem;
+	cursor: pointer
+	
 }
 
 .buttons-container {
@@ -59,4 +64,5 @@ button {
         "number-4 number-5 number-6 minus"
         "number-7 number-8 number-9 multiply"
         "number-0 decimal equals multiply";
+    gap: 0
 }
