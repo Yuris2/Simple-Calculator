@@ -37,6 +37,7 @@ const operate = (num1, operator, num2) => {
 let firstNumber = "";
 let eqoperator;
 let operatorHit = false
+let prevOperator = "" //for effects
 let secondNumber = "";
 let clearScreen = false
 let chainOperation = [0, false] //number of times operated, was equals hit
@@ -46,6 +47,7 @@ const resetCalc = () => {
     firstNumber = ""
     eqoperator = null
     operatorHit = false
+    prevOperator = ""
     clearScreen = false
     secondNumber = "";
     chainOperation = [0, false]
@@ -90,7 +92,15 @@ operators.forEach(operator => {
     operator.addEventListener('click', () => {
         operatorHit = true
         chainOperation[0] += 1
-        operator.style.filter = "brightness(0.6)"
+        if (prevOperator != operator.id) {
+            operator.style.filter = "brightness(0.6)"
+            let resetHover = document.getElementById(prevOperator)
+            console.log(resetHover)
+            prevOperator = operator.id
+            console.log(prevOperator)
+        }
+
+        
         if (chainOperation[0] > 1) { //if equals sign has not been hit
             solve()
         }
