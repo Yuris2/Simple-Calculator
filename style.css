@@ -5,6 +5,8 @@ Color Palette :
 #65737E
 #A7ADBB
 #C1C5CE
+#5B6A7D Num Buttons
+#505C68 Screen
 */
 
 
@@ -31,22 +33,23 @@ main {
 }
 
 .screen {
-    background-color: bisque;
+    background-color: #505C68;
 }
 
 #input {
     font-family: lato;
+    color:#FBFFFF;
     text-align: end;
     margin-right: 1%;
 }
 
 button {
-    background-color: aqua;
-    font-family:lato
+    background-color: #5B6A7D;
+    font-family:lato;
+    color:#FBFFFF;
 }
 
 .buttons-container {
-    background-color: yellowgreen;
     display: grid;
     grid-template:
         "clear backspace power divide"
