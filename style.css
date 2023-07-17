@@ -1,8 +1,30 @@
 body {
+    
+}
+
+@font-face {
+    font-family: lato-medium;
+    src: url(fonts/Lato-Medium.ttf)
+}
+@font-face {
+    font-family: lato;
+    src: url(fonts/Lato-Regular.ttf)
+}
+@font-face {
+    font-family: lato-bold;
+    src: url(fonts/Lato-Semibold.ttf)
+}
+main {
+    border: 2px solid #fe4a49;
 
 }
 
+.screen {
+ background-color: bisque;
+}
+
 .buttons {
+    background-color: yellowgreen;
     display: grid;
     grid-template:
         "clear backspace power divide"
@@ -11,4 +33,3 @@ body {
         "number-7 number-8 number-9 multiply"
         "number-0 decimal equals multiply"
 }
-

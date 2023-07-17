@@ -24,7 +24,7 @@ const operate = (num1, operator, num2) => {
     }else if (operator == "*") {
         return multiply(num1, num2)
     }else if (operator == "/") {
-        if (num2 == 0) {
+        if (num2 == 0) { //NO DIVIDING BY 0
             return "Can't Divide by 0"
         }
         return divide(num1, num2) 
@@ -95,7 +95,6 @@ operators.forEach(operator => {
             solve()
         }
         eqoperator = operator.innerHTML
-        
     })
 })
 
