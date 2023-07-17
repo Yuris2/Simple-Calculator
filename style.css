@@ -54,13 +54,23 @@ button {
 	padding: 1.5rem 3rem;
 	cursor: pointer
 }
-
+.operation:hover, .number:hover, #equals:hover, #negative:hover, #decimal:hover, .operation:active, .number:active, #equals:active, #negative:active, #decimal:active {
+    filter: brightness(0.8);
+}
+/* Special Button Effects */
+.operation, .clear, .delete, #decimal, #negative { 
+    background-color: #374353 ;
+}
 .clear:hover, .delete:hover  {
     color:#fe4a49
 }
 .clear:active, .delete:active {
     background-color: #fe4a49;
     color:#FBFFFF
+}
+
+#equals {
+    background-color: #FCA82E;
 }
 
 .buttons-container {
