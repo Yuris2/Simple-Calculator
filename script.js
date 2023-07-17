@@ -90,7 +90,7 @@ operators.forEach(operator => {
     operator.addEventListener('click', () => {
         operatorHit = true
         chainOperation[0] += 1
-
+        operator.style.filter = "brightness(0.6)"
         if (chainOperation[0] > 1) { //if equals sign has not been hit
             solve()
         }

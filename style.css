@@ -12,7 +12,7 @@ Color Palette :
 
 
 body {
-    
+
 }
 
 @font-face {
@@ -40,9 +40,10 @@ main {
 
 #input {
     font-family: lato;
+    font-size: 40px;
     color:#FBFFFF;
     text-align: end;
-    margin-right: 1%;
+    margin-right: 2%;
 }
 
 button {
