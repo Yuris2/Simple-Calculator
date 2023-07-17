@@ -1,3 +1,14 @@
+/* 
+Color Palette :
+#343c46
+#4F5B67
+#65737E
+#A7ADBB
+#C1C5CE
+*/
+
+
+
 body {
     
 }
@@ -20,10 +31,21 @@ main {
 }
 
 .screen {
- background-color: bisque;
+    background-color: bisque;
 }
 
-.buttons {
+#input {
+    font-family: lato;
+    text-align: end;
+    margin-right: 1%;
+}
+
+button {
+    background-color: aqua;
+    font-family:lato
+}
+
+.buttons-container {
     background-color: yellowgreen;
     display: grid;
     grid-template:
