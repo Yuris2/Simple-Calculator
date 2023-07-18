@@ -49,6 +49,42 @@ const resetCalc = () => {
     clearScreen = false
     secondNumber = "";
     chainOperation = [0, false]
+    resetBtn()
+}
+
+const resetBtn = () => {
+    operators.forEach(operationBtn => {
+        operationBtn.style.filter = "brightness(1)"
+    })
+}
+const setBtn = (button) => {
+    switch(button) {
+        case "+":
+            resetBtn()
+            let plusBtn = document.getElementById("plus")
+            plusBtn.style.filter = "brightness(0.8)"
+            break
+        case "-":
+            resetBtn()
+            let minusBtn = document.getElementById("minus")
+            minusBtn.style.filter = "brightness(0.8)"
+            break
+        case "/":
+            resetBtn()
+            let divideBtn = document.getElementById("divide")
+            divideBtn.style.filter = "brightness(0.8)"
+            break
+        case "^":
+            resetBtn()
+            let powerBtn = document.getElementById("power")
+            powerBtn.style.filter = "brightness(0.8)"
+            break
+        case "*":
+            resetBtn()
+            let multiplyBtn = document.getElementById("multiply")
+            multiplyBtn.style.filter = "brightness(0.8)"
+            break
+    }
 }
 const solve = () => {
     if (firstNumber != "" && secondNumber != "") { //Ensures that the equation is complete
@@ -94,6 +130,7 @@ operators.forEach(operator => {
             solve()
         }
         eqoperator = operator.innerHTML
+        setBtn(eqoperator)
     })
 })
 
