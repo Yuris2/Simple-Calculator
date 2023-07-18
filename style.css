@@ -8,11 +8,8 @@ Color Palette :
 #5B6A7D Num Buttons
 #505C68 Screen
 */
-
-
-
 body {
-
+    background: linear-gradient(to right, #D4E5F6,#DADCDB )
 }
 
 @font-face {
@@ -28,14 +25,23 @@ body {
     src: url(fonts/Lato-Semibold.ttf)
 }
 main {
-    border: 2px solid #fe4a49;
+    margin:auto;
+    border: 3px solid #A7ADBB;
+    border-radius: 1%;
     max-width: min-content;
+    background-color: black;
+}
+
+h1 {
+    text-align: center;
+    font-family: lato-bold;
 }
 
 .screen {
     background-color: #505C68;
     padding-top: 10%;
     padding-bottom:2%;
+    border-top-left-radius: 1%;
 }
 
 #input {
@@ -47,11 +53,12 @@ main {
 }
 
 button {
+    margin:0.21%;
     background-color: #5B6A7D;
     font-family:lato;
     color:#FBFFFF;
     font-size: 19px;
-	border: 1px solid ;
+	border: 0px solid ;
 	padding: 1.5rem 3rem;
 	cursor: pointer
 }
