@@ -33,6 +33,7 @@ main {
 }
 
 h1 {
+    color:#1d2125;
     text-align: center;
     font-family: lato-bold;
 }
@@ -90,4 +91,22 @@ button {
         "number-7 number-8 number-9 multiply"
         "number-0 decimal equals multiply";
     gap: 0
+}
+
+.footer {
+    color: #1d2125;
+    font-family: lato-medium;
+    text-align: center;
+    padding-top: 3em;
+}
+
+#footer-button {
+    width: 2.5%;
+    height:2.5%
+}
+
+#footer-button:hover {
+    background-color:#FCA82E ;
+    border-radius: 20px;
+    transition-duration: 0.5s;
 }
