@@ -25,7 +25,7 @@ const operate = (num1, operator, num2) => {
         return multiply(num1, num2)
     }else if (operator == "/") {
         if (num2 == 0) { //NO DIVIDING BY 0
-            return "Can't Divide by 0"
+            return "Nonreal Answer"
         }
         return divide(num1, num2) 
     }else if (operator == "^") {
@@ -54,36 +54,30 @@ const resetCalc = () => {
 
 const resetBtn = () => {
     operators.forEach(operationBtn => {
-        operationBtn.style.filter = "brightness(1)"
+        operationBtn.style.color = "#FBFFFF"
     })
 }
 const setBtn = (button) => {
-    switch(button) {
-        case "+":
-            resetBtn()
-            let plusBtn = document.getElementById("plus")
-            plusBtn.style.filter = "brightness(0.8)"
-            break
-        case "-":
-            resetBtn()
-            let minusBtn = document.getElementById("minus")
-            minusBtn.style.filter = "brightness(0.8)"
-            break
-        case "/":
-            resetBtn()
-            let divideBtn = document.getElementById("divide")
-            divideBtn.style.filter = "brightness(0.8)"
-            break
-        case "^":
-            resetBtn()
-            let powerBtn = document.getElementById("power")
-            powerBtn.style.filter = "brightness(0.8)"
-            break
-        case "*":
-            resetBtn()
-            let multiplyBtn = document.getElementById("multiply")
-            multiplyBtn.style.filter = "brightness(0.8)"
-            break
+    if (button == "+") {
+        resetBtn()
+        document.getElementById("plus").style.color = "#FCA82E"
+        
+    }else if (button == "-") {
+        resetBtn()
+        document.getElementById("minus").style.color = "#FCA82E"
+
+    }else if (button == "/") {
+        resetBtn()
+        document.getElementById("divide").style.color = "#FCA82E"
+        
+    }else if (button == "*") {
+        resetBtn()
+        document.getElementById("multiply").style.color = "#FCA82E"
+        
+    }else if (button == "^") {
+        resetBtn()
+        document.getElementById("power").style.color = "#FCA82E"
+        
     }
 }
 const solve = () => {
@@ -99,7 +93,6 @@ const solve = () => {
         firstNumber = answer 
         secondNumber = ""
         clearScreen = false
-        console.log("Ok")
        }else if (chainOperation[1] == true) { //if equals sign was hit (signifying end of chain operation)
         resetCalc()
        }
