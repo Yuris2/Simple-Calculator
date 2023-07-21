@@ -13,19 +13,13 @@ To use the Calculator [visit this website](https://yuris2.github.io/Simple-Calcu
 
 
 ## Features
+Keyboard Input
 
-```python
-import foobar
+        All Numbers and Operations work as usual. Delete button is the backspace key. "C" or "c" is the Clear Key
 
-# returns 'words'
-foobar.pluralize('word')
+Ability to Solve Multiple Operations
 
-# returns 'geese'
-foobar.pluralize('goose')
-
-# returns 'phenomenon'
-foobar.singularize('phenomena')
-```
+        Example: 12 + 7 -5 * 3 = 42
 
 ## Takeaways
 
