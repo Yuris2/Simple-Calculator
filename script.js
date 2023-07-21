@@ -191,3 +191,53 @@ equalButton.addEventListener('click', () => {
     chainOperation[1] = true //sets is equal to true to end chain operation
     solve()
 })
+
+//KEYBOARD FUNCTIONALITY
+document.addEventListener('keydown', function (e) {
+    let input
+    switch (e.key) {
+        case '1':
+            input = document.getElementById("number-1")
+            input.click()
+            break
+        case '2':
+            input = document.getElementById("number-2")
+            input.click()
+            break
+        case '3':
+            input = document.getElementById("number-3")
+            input.click()
+            break
+        case '4':
+            input = document.getElementById("number-4")
+            input.click()
+            break
+        case '5':
+            input = document.getElementById("number-5")
+            input.click()
+            break
+        case '6':
+            input = document.getElementById("number-6")
+            input.click()
+            break
+        case '7':
+            input = document.getElementById("number-7")
+            input.click()
+            break
+        case '8':
+            input = document.getElementById("number-8")
+            input.click()
+            break
+        case '9':
+            input = document.getElementById("number-9")
+            input.click()
+            break
+        case '0':
+            input = document.getElementById("number-0")
+            input.click()
+            break
+        
+        
+    }
+    
+}) 
