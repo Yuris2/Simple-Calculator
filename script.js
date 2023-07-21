@@ -195,6 +195,7 @@ equalButton.addEventListener('click', () => {
 //KEYBOARD FUNCTIONALITY
 document.addEventListener('keydown', function (e) {
     let input
+    console.log(e.key)
     switch (e.key) {
         case '1':
             input = document.getElementById("number-1")
@@ -236,6 +237,44 @@ document.addEventListener('keydown', function (e) {
             input = document.getElementById("number-0")
             input.click()
             break
+        case '+':
+            input = document.getElementById("plus")
+            input.click()
+            break
+        case '-':
+            input = document.getElementById("minus")
+            input.click()
+            break
+        case '*':
+            input = document.getElementById("multiply")
+            input.click()
+            break
+        case '/':
+            input = document.getElementById("divide")
+            input.click()
+            break
+        case '.':
+            input = document.getElementById("decimal")
+            input.click()
+            break
+        case '^':
+            input = document.getElementById("power")
+            input.click()
+            break
+        case "Enter":
+            input = document.getElementById("equals")
+            input.click()
+            break
+        case "Backspace":
+            input = document.getElementById("backspace")
+            input.click()
+            break
+        case "C":
+        case "c":
+            input = document.getElementById("clear")
+            input.click()
+            break
+        
         
         
     }
